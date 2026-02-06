@@ -1,16 +1,21 @@
 use itertools::Itertools;
+use proc_macro2::Span;
 use std::collections::HashMap;
 use std::fmt::Formatter;
-use syn::Item;
 use syn::Result as ParseResult;
 use syn::Token;
 use syn::parse::{Parse, ParseStream};
 use syn::punctuated::Punctuated;
-use syn::token::Bracket;
 use syn::{Error as ParseError, bracketed};
 
 #[derive(Debug, Hash, Eq, PartialEq, Clone)]
 pub struct FeatureName(syn::Ident);
+
+impl FeatureName {
+    pub fn span(&self) -> Span {
+        self.0.span()
+    }
+}
 
 impl Parse for FeatureName {
     fn parse(input: ParseStream) -> ParseResult<Self> {

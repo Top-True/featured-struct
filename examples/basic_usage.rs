@@ -1,22 +1,22 @@
 /*
- #[featruct(
-    a,
-    b,
-    c,
-    abc = a + b + c,
- )]
- struct Example {
-    common: u8,
-    #[optional(a)]
-    a: u8,
-    #[optional(b)]
-    b: u8,
-    #[optional(c)]
-    c: u8,
-    #[optional(abc)]
-    abc: u8,
- }
- */
+#[featruct(
+   a,
+   b,
+   c,
+   abc = a + b + c,
+)]
+struct Example {
+   common: u8,
+   #[optional(a)]
+   a: u8,
+   #[optional(b)]
+   b: u8,
+   #[optional(c)]
+   c: u8,
+   #[optional(abc)]
+   abc: u8,
+}
+*/
 
 #[allow(non_snake_case, unused_imports)]
 mod Example {
@@ -87,13 +87,12 @@ mod Example {
 
     pub mod a {
         use super::*;
-        
+
         pub use __private::r#f1::Only;
         pub use __private::r#f1::With;
     }
-
 }
 
 fn main() {
-
+    println!("hello, world");
 }
